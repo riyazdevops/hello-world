@@ -2,5 +2,5 @@
 From tomcat:8-jre8 
 
 # Maintainer 
-MAINTAINER "newpage solutions" 
+MAINTAINER "newpage solutions bangalore" 
 COPY ./webapp.war /usr/local/tomcat/webapps
