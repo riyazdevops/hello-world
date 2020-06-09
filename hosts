@@ -1,5 +1,5 @@
 [ansible-server]
-localhost
+localhost ansible_connection=local
 
 [kube-cluster]
 172.31.47.145
