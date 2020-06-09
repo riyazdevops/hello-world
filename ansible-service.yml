@@ -1,0 +1,11 @@
+---
+- name: create service for deployment
+  hosts: kube-cluster
+  become: true
+  user: root
+
+  tasks:
+  - name: create a service
+    command: kubectl apply -f newpage-service.yml
+    args:
+      chdir: /opt/kubernetes
