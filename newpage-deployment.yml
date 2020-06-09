@@ -1,0 +1,26 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: newpage-deployment
+spec:
+  selector:
+    matchLabels:
+      app: newpage-devops
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  template:
+    metadata:
+      labels:
+        app: newpage-devops
+    spec:
+      containers:
+      - name: newpage-devops-project
+        image: 22786/newpage_demo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
