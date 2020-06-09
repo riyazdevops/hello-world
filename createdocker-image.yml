@@ -4,16 +4,16 @@
 
   tasks:
   - name: create docker image using war file
-    command: docker build -t simple-devops-image:latest .
+    command: docker build -t newpage_demo:latest .
     args:
-      chdir: /opt/k8s-lab
+      chdir: /opt/ansible/kube
 
   - name: create tag to image
-    command: docker tag simple-devops-image yankils/simple-devops-image
+    command: docker tag newpage_demo 22786/newpage_demo
 
   - name: push image on to dockerhub
-    command: docker push yankils/simple-devops-image
+    command: docker push 22786/newpage_demo
 
   - name: remove docker images form ansible server
-    command: docker rmi simple-devops-image:latest yankils/simple-devops-image
+    command: docker rmi newpage_demo:latest 22786/newpage_demo
     ignore_errors: yes
