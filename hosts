@@ -2,4 +2,4 @@
 localhost ansible_connection=local
 
 [kube-cluster]
-172.31.47.145
+172.31.32.195
